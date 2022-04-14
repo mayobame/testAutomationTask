@@ -15,17 +15,25 @@ And I entered number of days worked per week
 Then I should see the result based on my information 
 
 
-# Scenario: Check annual leave for someone starting part way
-# And I select someone starting Part way 
-# And entered employment strat date
-# An I emtered leave year 
-# And I entered number of days worked per week
-# Then I should see the result based on my information 
+Scenario: Check annual leave for someone starting part way
+And I select  starting Part way 
+And entered employment start date
+|Day|Month|Year|
+|2|3|2020|
+And I entered leave year 
+|Day|Month|Year|
+|2|3|2021|
+And I entered number of days worked per week
+Then I should see the result based on my information 
 
 # Scenario: Check annual leave for someone leaving part way
 # And I select someone starting Part way 
-# And enter employment strat date
+# And enter employment start date
+# |Day|Month|Year|
+# |2|3|2020|
 # An I enter leave year 
+# |Day|Month|Year|
+# |2|1|2020|
 # And I entered number of days worked per week
 # Then I should see the result based on my information 
 

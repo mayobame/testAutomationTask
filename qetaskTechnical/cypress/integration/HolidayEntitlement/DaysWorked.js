@@ -39,12 +39,46 @@ entitledPage.clickContinue();
 })
 
 Then('I should see the result based on my information',()=> {
-// cy.get('h2').then(($test)=> {
-//     expect($test.text()).contain('Your answersdddsdsd')
-cy.get('h2').should('have.text','mum')
+cy.get('h2').should('have.text','Information based on your answers')
+
+})
+And ('I select  starting Part way',()=> {
+    cy.get('#response-1').click();
+    entitledPage.clickContinue();
 
 })
 
+And ('entered employment start date',(datatabble)=> {
+    datatabble.hashes().forEach(row => {
+        cy.log(row.Day)
+        cy.log(row.Month)
+        cy.log(row.Year)
+        entitledPage.clickContinue();
+    })
+
+    And ('I entered leave year',(datatabble)=> {
+        datatabble.hashes().forEach(row => {
+            cy.log(row.Day)
+            cy.log(row.Month)
+            cy.log(row.Year)
+            entitledPage.clickContinue();
+           
+
+        })
+
+    And ('I entered number of days worked per week',()=> {
+        cy.get('#response').type(5)
+        entitledPage.clickContinue();
+            
+            })
+
+    Then('I should see the result based on my information',()=> {
+    cy.get('h2').should('have.text','Your answers')
+                
+                })
+                
 
 
+    })
 
+})
