@@ -37,7 +37,7 @@ And ('Select how to work out my holiday',()=> {
 
 })
 
-//Second Scenario
+
 
 And ('I entered number of days worked per week',()=> {
 cy.get('#response').type(5)
@@ -46,13 +46,13 @@ entitledPage.clickContinue();
 })
 
 Then('I should see the result based on my information',()=> {
-cy.get('h2').should('have.text','Information based on your answers')
-
+cy.get('h2').should('be.visible')
 })
 
 
 
 
+//Second Scenario
 And ('I select  starting Part way',()=> {
     cy.get('#response-0').click();
     entitledPage.clickContinue();
@@ -84,7 +84,7 @@ And ('entered employment start date',(datatabble)=> {
             })
 
     Then('I should see the result based on my information',()=> {
-    cy.get('h2').should('have.text','Your answers')
+    cy.get('h2').should('be.visible')
                 
                 })
             
